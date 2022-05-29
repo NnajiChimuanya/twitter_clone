@@ -9,6 +9,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import { Button } from "@mui/material";
 import SidebarOption from "./SidebarOption";
 
 
@@ -16,10 +17,10 @@ import SidebarOption from "./SidebarOption";
 const Sidebar = () => {
   return (
     <div className="sidebar">
-        < TwitterIcon />
+        < TwitterIcon className="sidebarOption-icon"/>
 
 
-        < SidebarOption text="Home" Icon={HomeIcon} />
+        < SidebarOption active text="Home" Icon={HomeIcon} />
         < SidebarOption text="Explore" Icon={TagIcon} />
         < SidebarOption text="Communities" Icon={PeopleOutlineIcon} />
         < SidebarOption text="Notification" Icon={NotificationsNoneIcon} />
@@ -27,6 +28,8 @@ const Sidebar = () => {
         < SidebarOption text="Bookmarks" Icon={BookmarkBorderIcon} />
         < SidebarOption text="Profile" Icon={PermIdentityIcon} />
         < SidebarOption text="More" Icon={MoreHorizIcon} />
+
+        <Button variant="outlined" fullWidth className="sidebarOption-tweet">Tweet</Button>
     </div>
   )
 }

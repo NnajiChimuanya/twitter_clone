@@ -1,4 +1,10 @@
 * {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    --twitter-color: #50b7f5;
+    --twitter-background: #e6ecf0;
 }
