@@ -2,7 +2,7 @@ import "./feed.css"
 import React, { useState, useEffect } from 'react'
 import TweetBox from "./TweetBox"
 import Post from "./Post"
-import { database} from "../firebase.js"
+import { database} from "../firebase"
 import {onSnapshot, collection } from "firebase/firestore";
 
 const Feed = () => {
