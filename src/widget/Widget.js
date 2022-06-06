@@ -15,6 +15,7 @@ const Widgets = () => {
         <h2> What's happening</h2>
 
         <TwitterTimelineEmbed 
+          className="timeline-Embed"
           sourceType="profile" 
           screenName="nnaji_chimuanya" 
           options={{height : 400}} 

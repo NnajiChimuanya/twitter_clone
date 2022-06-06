@@ -9,27 +9,27 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
 
 
-const Post = () => {
+const Post = ({ displayName, userName, verified, text, avatar, image}) => {
   return (
     <>
       <div className="post">
       <div className="post-avatar">
-      < Avatar src="https://pbs.twimg.com/profile_images/1521238952698601475/qIg6IES6_400x400.jpg" />
+      < Avatar src={avatar} />
       </div>
 
       <div className="post-body">
         <div className="post-header">
           <div className="post-headerText">
-            <h3> Nnaji Chimuanya {" "} <span className="post-headerSpan"> <VerifiedIcon className="verified" /> @nnaji_chimuanya </span>  </h3>
+            <h3>{displayName} {" "} <span className="post-headerSpan"> {verified && <VerifiedIcon className="verified" />} @{userName} </span>  </h3>
           </div>
 
           <div className="post-headerDescription">
-            <p> This is the first official tweet </p>
+            <p> {text} </p>
           </div>
         </div>
     
         {/* image */}
-        <img src="https://i.gifer.com/QXLH.gif" alt=""/>
+        <img src={image} alt=""/>
     
         <div className="post-footer">
           < ChatBubbleOutlineOutlinedIcon fontSize="small"/>
@@ -45,142 +45,6 @@ const Post = () => {
     </div>
 
 
-
-    <div className="post">
-      <div className="post-avatar">
-      < Avatar src="https://pbs.twimg.com/profile_images/1521238952698601475/qIg6IES6_400x400.jpg" />
-      </div>
-
-      <div className="post-body">
-        <div className="post-header">
-          <div className="post-headerText">
-            <h3> Nnaji Chimuanya {" "} <span className="post-headerSpan"> <VerifiedIcon className="verified" /> @nnaji_chimuanya </span>  </h3>
-          </div>
-
-          <div className="post-headerDescription">
-            <p> This is the first official tweet </p>
-          </div>
-        </div>
-    
-        {/* image */}
-        <img src="https://i.gifer.com/QXLH.gif" alt=""/>
-    
-        <div className="post-footer">
-          < ChatBubbleOutlineOutlinedIcon fontSize="small"/>
-
-          < RepeatIcon fontSize="small" />
-
-          < FavoriteBorderOutlinedIcon fontSize="small" />
-
-          < IosShareOutlinedIcon fontSize="small" />
-        </div>
-      </div>
-
-    </div>
-
-
-
-    <div className="post">
-      <div className="post-avatar">
-      < Avatar src="https://pbs.twimg.com/profile_images/1521238952698601475/qIg6IES6_400x400.jpg" />
-      </div>
-
-      <div className="post-body">
-        <div className="post-header">
-          <div className="post-headerText">
-            <h3> Nnaji Chimuanya {" "} <span className="post-headerSpan"> <VerifiedIcon className="verified" /> @nnaji_chimuanya </span>  </h3>
-          </div>
-
-          <div className="post-headerDescription">
-            <p> This is the first official tweet </p>
-          </div>
-        </div>
-    
-        {/* image */}
-        <img src="https://i.gifer.com/QXLH.gif" alt=""/>
-    
-        <div className="post-footer">
-          < ChatBubbleOutlineOutlinedIcon fontSize="small"/>
-
-          < RepeatIcon fontSize="small" />
-
-          < FavoriteBorderOutlinedIcon fontSize="small" />
-
-          < IosShareOutlinedIcon fontSize="small" />
-        </div>
-      </div>
-
-    </div>
-
-
-
-
-    <div className="post">
-      <div className="post-avatar">
-      < Avatar src="https://pbs.twimg.com/profile_images/1521238952698601475/qIg6IES6_400x400.jpg" />
-      </div>
-
-      <div className="post-body">
-        <div className="post-header">
-          <div className="post-headerText">
-            <h3> Nnaji Chimuanya {" "} <span className="post-headerSpan"> <VerifiedIcon className="verified" /> @nnaji_chimuanya </span>  </h3>
-          </div>
-
-          <div className="post-headerDescription">
-            <p> This is the first official tweet </p>
-          </div>
-        </div>
-    
-        {/* image */}
-        <img src="https://i.gifer.com/QXLH.gif" alt=""/>
-    
-        <div className="post-footer">
-          < ChatBubbleOutlineOutlinedIcon fontSize="small"/>
-
-          < RepeatIcon fontSize="small" />
-
-          < FavoriteBorderOutlinedIcon fontSize="small" />
-
-          < IosShareOutlinedIcon fontSize="small" />
-        </div>
-      </div>
-
-    </div>
-
-
-
-
-    <div className="post">
-      <div className="post-avatar">
-      < Avatar src="https://pbs.twimg.com/profile_images/1521238952698601475/qIg6IES6_400x400.jpg" />
-      </div>
-
-      <div className="post-body">
-        <div className="post-header">
-          <div className="post-headerText">
-            <h3> Nnaji Chimuanya {" "} <span className="post-headerSpan"> <VerifiedIcon className="verified" /> @nnaji_chimuanya </span> </h3>
-          </div>
-
-          <div className="post-headerDescription">
-            <p> This is the first official tweet </p>
-          </div>
-        </div>
-    
-        {/* image */}
-        <img src="https://www.tweetgen.com/c/default-tweet-3.png" alt=""/>
-    
-        <div className="post-footer">
-          < ChatBubbleOutlineOutlinedIcon fontSize="small"/>
-
-          < RepeatIcon fontSize="small" />
-
-          < FavoriteBorderOutlinedIcon fontSize="small" />
-
-          < IosShareOutlinedIcon fontSize="small" />
-        </div>
-      </div>
-
-    </div>
     </>
     
   )
