@@ -2,14 +2,28 @@ import "./feed.css"
 import React, { useState, useEffect } from 'react'
 import TweetBox from "./TweetBox"
 import Post from "./Post"
-import db from "../firebase"
+import { database} from "../firebase.js"
+import {onSnapshot, collection } from "firebase/firestore";
 
 const Feed = () => {
   const [posts, setPosts] = useState([])
 
-  useEffect(() => {
+  const collectionRef = collection(database, "76149494ABMICTU")
 
+  useEffect(() => {
+    onSnapshot(collectionRef, (data) => {
+
+      //fetching data
+      // data.docs.map((item) => {
+      //   setPosts(item.data())
+      // })
+
+      setPosts(data.docs.map(doc => doc.data()))
+    })
   }, [])
+
+  console.log(posts)
+ 
 
   return (
    <div className="feed">
@@ -19,6 +33,20 @@ const Feed = () => {
       </div>
 
       < TweetBox />
+
+      {posts.map(post => {
+        return (
+          < Post 
+                displayName={post.displayName}
+                userName={post.userName}
+                verified={post.verified}
+                text={post.text}
+                avatar={post.avatar}
+                image={post.image}
+              />
+        )
+      })}
+
 
       < Post 
       displayName="Nnaji Chimuanya"
