@@ -35,7 +35,7 @@ const TweetBox = () => {
               <label for="image">
                 < CollectionsIcon />
               </label>
-              <input id="image" type="file" name="myImage" accept="image/png, image/gif, image/jpeg" />
+              <input id="image" type="file" name="Image" accept="image/png, image/gif, image/jpeg" />
             </div>
             </div>
 
