@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react'
 import TweetBox from "./TweetBox"
 import Post from "./Post"
 import { database} from "../firebase"
-import {onSnapshot, collection } from "firebase/firestore";
+import {onSnapshot, collection, query, orderBy} from "firebase/firestore";
+import FlipMove from 'react-flip-move';
 
 const Feed = () => {
   const [posts, setPosts] = useState([])
 
   const collectionRef = collection(database, "76149494ABMICTU")
-
+  const q = query(collectionRef, orderBy("createdAt", "desc"))
   useEffect(() => {
-    onSnapshot(collectionRef, (data) => {
+    onSnapshot(q, (data) => {
 
       //fetching data
       // data.docs.map((item) => {
@@ -34,31 +35,24 @@ const Feed = () => {
 
       < TweetBox />
 
+     <FlipMove>
       {posts.map(post => {
-        return (
-          < Post 
-                displayName={post.displayName}
-                userName={post.userName}
-                verified={post.verified}
-                text={post.text}
-                avatar={post.avatar}
-                image={post.image}
-              />
-        )
-      })}
+          return (
+            < Post 
+                  key={post.id}
+                  displayName={post.displayName}
+                  userName={post.userName}
+                  verified={post.verified}
+                  text={post.text}
+                  avatar={post.avatar}
+                  image={post.image}
+                />
+          )
+        })}
+     </FlipMove>
 
 
-      < Post 
-      displayName="Nnaji Chimuanya"
-      userName="nnaji_chimuanya"
-      verified
-      text="This is the first post"
-      avatar="https://pbs.twimg.com/profile_images/1521238952698601475/qIg6IES6_400x400.jpg"
-      image="https://i.gifer.com/QXLH.gif"
-      />
-     
-      
-
+    
       {/* posts */}
    </div>
   )

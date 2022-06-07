@@ -17,6 +17,7 @@
     "npm": "^8.11.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-flip-move": "^3.0.4",
     "react-router-dom": "^5.3.1",
     "react-scripts": "5.0.0",
     "react-twitter-embed": "^4.0.4",
