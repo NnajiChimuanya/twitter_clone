@@ -28,6 +28,15 @@
     margin-top: 20px;
 }
 
+.post-footer > .MuiSvgIcon-root  {
+    cursor: pointer;
+}
+
+.post-footer-div {
+    display: flex;
+    align-items: center;
+}
+
 .verified {
     color: var(--twitter-color) !important;
 }

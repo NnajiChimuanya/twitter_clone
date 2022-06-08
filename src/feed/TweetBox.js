@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Avatar, Button } from "@material-ui/core"
 import { database } from "../firebase"
 import CollectionsIcon from '@mui/icons-material/Collections';
-import {collection, addDoc, Timestamp} from "firebase/firestore";
+import {collection, addDoc, Timestamp,} from "firebase/firestore";
 
 const TweetBox = () => {
   const collectionRef = collection(database, "76149494ABMICTU")
@@ -22,7 +22,9 @@ const TweetBox = () => {
       text : "Testing out the flip move and ordering method",
       image : "https://images.squarespace-cdn.com/content/v1/55ee8615e4b077f58027f44a/1471703548148-HPYBR3WYG5FXJMN3V6AA/YAY_http-%3A%3Ai1361.photobucket.com%3Aalbums%3Ar666%3Akaramelkinema%3APosts%3A2013%3A07-July%3A03-DM2%3AMinions10_zpsdd28ca77.gif?format=500w",
       avatar : "https://pbs.twimg.com/profile_images/1521238952698601475/qIg6IES6_400x400.jpg",
-      verified : true
+      verified : true,
+      likes : 0,
+      retweet : 0
 
     }).then(() => console.log("Sent a tweet"))
 
