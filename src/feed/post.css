@@ -28,13 +28,18 @@
     margin-top: 20px;
 }
 
-.post-footer > .MuiSvgIcon-root  {
+#icon  {
     cursor: pointer;
 }
 
 .post-footer-div {
     display: flex;
     align-items: center;
+}
+
+.greaterThanZero {
+    color: red !important;
+   
 }
 
 .verified {
