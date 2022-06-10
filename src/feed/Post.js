@@ -7,9 +7,32 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
+import { database} from "../firebase"
+import {collection, updateDoc, increment, doc } from "firebase/firestore";
 
 
-const Post = forwardRef(({ displayName, userName, verified, text, avatar, image}, ref) => {
+
+
+
+
+const Post = forwardRef(({id, displayName, userName, verified, text, avatar, image, likes, retweet, createdAt}, ref) => {
+  
+  const handleRetweet = async (x) => {
+    const docRef = doc(database, "76149494ABMICTU", x)
+    await updateDoc(docRef, {
+     retweet : increment(1)
+    });
+
+  }
+
+  const handleLike = async(x) => {
+    const docRef = doc(database, "76149494ABMICTU", x)
+    await updateDoc(docRef, {
+     likes : increment(1)
+    });
+  }
+
+
   return (
     <>
       <div className="post" ref={ref}>
@@ -34,13 +57,13 @@ const Post = forwardRef(({ displayName, userName, verified, text, avatar, image}
         }
     
         <div className="post-footer">
-          < ChatBubbleOutlineOutlinedIcon fontSize="small"/>
+          < ChatBubbleOutlineOutlinedIcon id="icon" fontSize="small"/>
 
-          < RepeatIcon fontSize="small" />
+          <div className={` post-footer-div ${retweet > 0 && "retweetgreaterThanZero"} `} onClick={() => handleRetweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
 
-          < FavoriteBorderOutlinedIcon fontSize="small" />
+          < div className={` post-footer-div ${likes > 0 && "likesGreaterThanZero"} `} onClick={() => handleLike(id)} > < FavoriteBorderOutlinedIcon id="icon" fontSize="small" /> {likes}</div>
 
-          < IosShareOutlinedIcon fontSize="small" />
+          < IosShareOutlinedIcon id="icon" fontSize="small" />
         </div>
       </div>
 

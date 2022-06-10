@@ -19,7 +19,9 @@ const Feed = () => {
       //   setPosts(item.data())
       // })
 
-      setPosts(data.docs.map(doc => doc.data()))
+      setPosts(data.docs.map(doc => {
+        return {...doc.data(), id: doc.id}
+      }))
     })
   }, [])
 
@@ -39,13 +41,16 @@ const Feed = () => {
       {posts.map(post => {
           return (
             < Post 
-                  key={post.id}
+                  id={post.id}
                   displayName={post.displayName}
                   userName={post.userName}
                   verified={post.verified}
                   text={post.text}
                   avatar={post.avatar}
                   image={post.image}
+                  likes={post.likes}
+                  retweet={post.retweet}
+                  createdAt={post.createdAt}
                 />
           )
         })}
