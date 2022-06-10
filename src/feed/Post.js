@@ -59,9 +59,9 @@ const Post = forwardRef(({id, displayName, userName, verified, text, avatar, ima
         <div className="post-footer">
           < ChatBubbleOutlineOutlinedIcon id="icon" fontSize="small"/>
 
-          <div className="post-footer-div" onClick={() => handleRetweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
+          <div className={` post-footer-div ${retweet > 0 && "retweetgreaterThanZero"} `} onClick={() => handleRetweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
 
-          < div className={` post-footer-div ${likes > 0 && "greaterThanZero"} `} onClick={() => handleLike(id)} > < FavoriteBorderOutlinedIcon id="icon" fontSize="small" /> {likes}</div>
+          < div className={` post-footer-div ${likes > 0 && "likesGreaterThanZero"} `} onClick={() => handleLike(id)} > < FavoriteBorderOutlinedIcon id="icon" fontSize="small" /> {likes}</div>
 
           < IosShareOutlinedIcon id="icon" fontSize="small" />
         </div>

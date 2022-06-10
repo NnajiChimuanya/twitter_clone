@@ -37,9 +37,13 @@
     align-items: center;
 }
 
-.greaterThanZero {
+.likesGreaterThanZero {
     color: red !important;
    
+}
+
+.retweetgreaterThanZero {
+    color : green;
 }
 
 .verified {
