@@ -90,13 +90,13 @@ const Post = forwardRef(({id, displayName, userName, verified, text, avatar, ima
 
           {
             !retweeted 
-            ? <div className={` post-footer-div `} onClick={() => handleRetweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
+            ? <div className={` post-footer-div retweet `} onClick={() => handleRetweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
             : <div className={` post-footer-div ${retweet > 0 && "retweetgreaterThanZero"} `} onClick={() => handleUnretweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
           }
 
          {
            !liked 
-           ?  < div className={` post-footer-div `} onClick={() => handleLike(id)} > < FavoriteBorderOutlinedIcon id="icon" fontSize="small" /> {likes}</div>
+           ?  < div className={` post-footer-div like `} onClick={() => handleLike(id)} > < FavoriteBorderOutlinedIcon id="icon" fontSize="small" /> {likes}</div>
            :  < div className={` post-footer-div ${likes > 0 && "likesGreaterThanZero"} `} onClick={() => handleUnlike(id)} > < FavoriteBorderOutlinedIcon id="icon" fontSize="small" /> {likes}</div>
          }
 
