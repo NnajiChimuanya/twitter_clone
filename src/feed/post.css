@@ -31,11 +31,20 @@
 #icon  {
     cursor: pointer;
     font-weight: 800;
+    margin-right: 5px;
 }
 
 .post-footer-div {
     display: flex;
     align-items: center;
+}
+
+.like:hover {
+    color: red;
+}
+
+.retweet:hover {
+    color : green;
 }
 
 .likesGreaterThanZero {
