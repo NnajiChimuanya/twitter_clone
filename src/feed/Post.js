@@ -18,14 +18,8 @@ import {collection, updateDoc, increment, doc} from "firebase/firestore";
 const Post = forwardRef(({id, displayName, userName, verified, text, avatar, image, likes, retweet, createdAt}, ref) => {
   
   const [liked, setLiked] = useState(false)
+  const [retweeted, setRetweeted] = useState(false)
 
-  const handleRetweet = async (x) => {
-    const docRef = doc(database, "76149494ABMICTU", x)
-    await updateDoc(docRef, {
-     retweet : increment(1)
-    });
-
-  }
 
   const handleLike = async(x) => {
     const docRef = doc(database, "76149494ABMICTU", x)
@@ -43,6 +37,24 @@ const Post = forwardRef(({id, displayName, userName, verified, text, avatar, ima
     });
 
     setLiked(false)
+  }
+
+  const handleRetweet = async(x) => {
+    const docRef = doc(database, "76149494ABMICTU", x)
+    await updateDoc(docRef, {
+     retweet : increment(1)
+    });
+
+    setRetweeted(true)
+  }
+
+  const handleUnretweet = async(x) => {
+    const docRef = doc(database, "76149494ABMICTU", x)
+    await updateDoc(docRef, {
+     retweet : increment(-1)
+    });
+
+    setRetweeted(false)
   }
 
   
@@ -76,7 +88,11 @@ const Post = forwardRef(({id, displayName, userName, verified, text, avatar, ima
         <div className="post-footer">
           < ChatBubbleOutlineOutlinedIcon id="icon" fontSize="small"/>
 
-          <div className={` post-footer-div ${retweet > 0 && "retweetgreaterThanZero"} `} onClick={() => handleRetweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
+          {
+            !retweeted 
+            ? <div className={` post-footer-div `} onClick={() => handleRetweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
+            : <div className={` post-footer-div ${retweet > 0 && "retweetgreaterThanZero"} `} onClick={() => handleUnretweet(id)}> < RepeatIcon id="icon" fontSize="small" /> {retweet} </div>
+          }
 
          {
            !liked 
