@@ -5,6 +5,11 @@
     padding-bottom: 10px;
 }
 
+.post:hover {
+    background-color: var(--twitter-background);
+}
+
+
 .post-avatar {
     padding: 20px;
 }
@@ -14,9 +19,10 @@
     padding: 10px;
 }
 
+
 .post-body > img {
     border-radius: 20px;
-    width: auto;
+    width: 100%;
     height: 200px;
 }
 
@@ -49,6 +55,7 @@
 
 .likesGreaterThanZero {
     color: red !important;
+    fill: red !important;
    
 }
 
