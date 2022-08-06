@@ -1,21 +1,22 @@
 .feed {
-    flex: 0.4;
-    border-right: 1px solid var(--twitter-background);
-    min-width: fit-content;
-    overflow-y: scroll;
+  flex: 0.4;
+  border-right: 1px solid var(--twitter-background);
+  height: 100vh;
+  min-width: fit-content;
+  overflow-y: scroll;
 }
 
 .feed::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .feed-header {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 100;
-    border: 1px solid var(--twitter-background);
-    border-bottom: none;
-    padding: 15px 20px;
-    backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  border: 1px solid var(--twitter-background);
+  border-bottom: none;
+  padding: 15px 20px;
+  backdrop-filter: blur(10px);
 }
